@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+    <!-- header on page-->
+    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#404040 ;color: white;">
+        <h1> <strong>Weather Dashboard</strong></h1>
+    </div>
+     <!-- container for entire page -->
+     <div id="content" class="container">
+        <div class="row">
+
+            <!-- left row to search for citires -->
+            <div id="content-left" class="col-md-3">
+                <form>
+                    <label for="search-city">Search for a City:</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
+                        <div class="input-group-append">
+                            <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div id="search-error"></div>
+                <!-- past searched citites/clearing local storage -->
+                <ul id="city-results" class="list-group mt-4"></ul>
+                <a id="clear-storage" href="#"></a>    
+            </div>
+
+            <!-- container for the right side of page to show 5 day forecast-->
+            <div id="content-right" class="col-md-9 pt-4">
+                <!-- to display today's weather at the top -->
+                <div id="current-weather" class="border rounded"></div>
+                <!-- show the 5 day forecast -->
+                <div id="five-day-forecast" class="mt-5"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
