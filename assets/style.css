@@ -51,6 +51,7 @@
     color:grey;
 }
 
+
 /*right side - top display current weather - bottom show 5 day forecast */
 #today-weather {
     padding-left: 15px;
@@ -62,6 +63,7 @@
     background-color: #0275d8;
     width: 9rem;
 }
+
 
 /* UV coloring scheme for UV display */
 .uv-moderate{
