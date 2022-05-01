@@ -1,45 +1,54 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
-    <link rel="stylesheet" href="./assets/style.css">
 </head>
-<body>
-    <!-- header on page-->
-    <div class="header">
-        <h1> <strong>Weather Dashboard</strong></h1>
-    </div>
-    <div id="content" class="container">
-        <div class="row">
 
-            <!-- left side to seach for cities/show previous searches   -->
-            <div id="content-left" class="col-md-3">
-                <form>
-                    <label for="cities">Search for a City:</label>
-                    <div class="form-row">
-                        <input id="cities" class="form-control" name="city" value="New York"></input>
-                        <button id="search-button" class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+    <!-- Main container for webpage content -->
+    <body>
+        <header class = "bg-dark text-white text-center p-2">
+            <h1>Weather Dashboard</h1>
+        </header>
+        <main class="container-fluid">
+            <div class = "row">
+                <div class="col-12 col-md-3 p-2 search-column">
+                    <form id = "city-search-input" class = "border p-2" >
+                        <h4>Search for a City</h2>
+                        <input class = "form-input" autofocus = "true"  type = "text" id="city" />
+                        <button class = "btn btn-primary" type = "submit">Search</button>
+                    </form>
+                    <div id = "past-searches" class = "past-search border"></div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <div id = "current-forecast" class = "row border selected-city">
+                        <div class = "col-12">
+                            <h2 id="city-searched"></h2>
+                            <div class = "list-group" id = "todays-weather-container"></div>
+                        </div>  
                     </div>
-                </form>
-                <div id="search-error"></div>
-                <!-- list cities from local storage/clear storage btn -->
-                <ul id="city-results" class="list-group mt-4"></ul>
-                <a id="clear-local-storage" href="#"></a>    
+                    <div id = "five-day-forecast" class = "row border">
+                            <h2 id = "forecast" class= "col-12"></h2>
+                            <div id = "five-day-container" class = "d-flex"></div>
+                    </div>  
+                </div>
             </div>
+        </main>
 
-            <!-- container on right side holding current weather and 5 day forecast below -->
-            <div id="content-right" class="col-md-9 pt-4">
-                <!-- today's weather on top -->
-                <div id="today-weather" class="border rounded"></div>
-                <!-- Five day weather forecast -->
-                <div id="five-day-forecast" class="mt-5"></div>
-            </div>
-        </div>
-    </div>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- moment.js -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Custom Script -->
+    <script src="./assets/js/script.js"></script>
+    
 </body>
 </html>
